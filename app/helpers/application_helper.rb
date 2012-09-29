@@ -17,6 +17,8 @@ module ApplicationHelper
 	end
 
 	def authorization
-		render :partial => "modules/authorization"		
+		if current_user.nil?
+			render :partial => "modules/authorization"		
+		end
 	end
 end
