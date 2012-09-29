@@ -2,6 +2,10 @@
 %h2
 	Войти в аккаунт
 
+- flash.each do |key, value|
+	%div.alert.alert-error.session-alert
+		= value
+		
 = form_for(resource, :as => resource_name, :html => {:class => 'form-horizontal'} , :url => session_path(resource_name)) do |f|
 	%legend Панель авторизации
 	%div.control-group

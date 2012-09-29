@@ -37,3 +37,7 @@ ru:
       send: 'Изменить пароль'
     reset_confirmation:
       send: 'Отправить письмо'
+
+  failure:
+    user:
+      invalid: 'Неверная комбинация логин/пароль'

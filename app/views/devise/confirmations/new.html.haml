@@ -1,5 +1,8 @@
 %h1 Подтверждение аккаунта
 = form_for(resource, :as => resource_name, :url => confirmation_path(resource_name), :html => { :method => :post, :class => 'form-horizontal' }) do |f|
+	
+	= devise_error_messages! 
+
 	%legend Отправить инструкцию подтверждения аккаунта заново
 
 	%div.control-group
