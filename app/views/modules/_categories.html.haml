@@ -1,0 +1,5 @@
+%div.well{:style => 'padding: 8px 0;'}
+	%ul.nav.nav-list
+		%li.nav-header Категории:
+		-@category.each do |category|
+			= render 'category', category: category

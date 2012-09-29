@@ -1,0 +1,4 @@
+-@pages.each do |page|
+	= render 'index_page', page: page
+/ - if !current_user.nil?
+/ 	= link_to t('modules.logout.out'), destroy_user_session_path, :method=> "delete"

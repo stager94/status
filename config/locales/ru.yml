@@ -1,0 +1,12 @@
+ru:
+  breadcrumbs:
+    home: 'Главная'
+    sign_in: 'Войти в аккаунт'
+    quotes: 'Цитаты'
+  views:
+    pagination:
+      previous: "&lt; Назад"
+      next: "Вперед &gt;"
+      truncate: "..."
+      first: 'Первая'
+      last: 'Последняя'

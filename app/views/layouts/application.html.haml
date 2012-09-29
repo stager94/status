@@ -1,0 +1,34 @@
+!!!
+%html
+	%head
+		%title
+			Title
+		%meta{:charset => "utf-8"}
+		= stylesheet_link_tag "application", :media => "all"
+		= javascript_include_tag 'application'
+		= csrf_meta_tags
+	%body
+		%div.container
+			%h1
+				Цитатник уанета
+			= menu
+			%div.row
+				%div.span12
+					%ul.breadcrumb
+						
+						- breadcrumbs.each do |bc|
+							%li
+							- if bc == breadcrumbs.last
+								= bc[0]
+							- else
+								= link_to bc[0], bc[1]
+								%span.divider /
+							
+					%div.row
+						%div.span9
+							= yield
+						%div.span3
+							= authorization
+							= categories
+							/ Модуль статистики
+							= statistic

@@ -1,0 +1,10 @@
+%div.navbar
+	%div.navbar-inner
+		%ul.nav
+			-@menus.each do |menu|
+				-if menu.view.code == 1
+					%li{class: current_page?(:"#{menu.link.path}") ? "active" : ""}
+						= link_to menu.title, :"#{menu.link.path}"
+				-else
+					%li{class: current_page?(page_path(menu.page)) ? "active" : "" }
+						= link_to menu.title, page_path(menu.page)

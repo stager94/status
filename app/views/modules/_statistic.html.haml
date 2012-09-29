@@ -1,0 +1,29 @@
+%div.well{:style => 'padding:10px;'}
+	%h4{:style => 'margin-top:0;'} Статистика:
+	%dl
+		%dt
+			Цитаты:
+		%dd
+			%div
+				Всего:
+				= @quotes_count
+			%div
+				Сегодня:
+				= @quotes_today_count
+			%div
+				Вчера:
+				=@quotes_yesterday_count
+
+	%dl
+		%dt
+			Пользователи:
+		%dd
+			%div
+				Всего:
+				= @users_count
+			%div
+				Сегодня:
+				= @users_today_count
+			%div
+				Вчера:
+				=@users_yesterday_count
