@@ -74,6 +74,7 @@ GEM
     fastercsv (1.5.5)
     formtastic (2.2.1)
       actionpack (>= 3.0)
+    friendly_id (4.0.8)
     haml (3.1.7)
     has_scope (0.5.1)
     hike (1.2.1)
@@ -190,6 +191,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   devise
   dynamic_form
+  friendly_id
   haml
   jquery-rails
   kaminari

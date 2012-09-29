@@ -18,7 +18,7 @@ gem 'kaminari'
 gem 'nokogiri'
 gem 'bootstrap-sass', '~> 2.1.0.0'
 gem 'dynamic_form'
-# gem 'friendly_id'
+gem 'friendly_id'
 gem 'rails-breadcrumbs'
 
 # Gems used only for assets and not required
