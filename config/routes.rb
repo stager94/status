@@ -6,7 +6,7 @@ Status::Application.routes.draw do
 
   root :to => 'application#index'
 
-  resources :categories do
+  resources :section do
     resources :quotes
   end
 

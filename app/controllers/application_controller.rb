@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
   end
 
   def category
-  	@category = Category.find(:all)
+  	@category = Section.find(:all)
   end
 
   def set_initial_breadcrumbs
