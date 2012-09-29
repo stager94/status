@@ -10,3 +10,6 @@ ru:
       truncate: "..."
       first: 'Первая'
       last: 'Последняя'
+  modules:
+    logout:
+      out: 'Выход'

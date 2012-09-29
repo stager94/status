@@ -1,0 +1,9 @@
+%div{style: 'margin-bottom:10px;'}
+	%div.boxgrid2
+		= render 'avatar_field'
+		%div
+			Здравствуйте, 
+			%b
+				= current_user.username
+		%div
+			= link_to t('modules.logout.out'), destroy_user_session_path, :method=> "delete"
