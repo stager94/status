@@ -1,0 +1,11 @@
+%blockquote
+	%p
+		= quote.content
+	%small
+		= quote.author
+	%h6
+		поделился
+		= quote.user.username
+		= quote.created_at.in_time_zone('Kyiv').strftime("%m.%d.%Y %H:%M")
+		| Категория:
+		= link_to quote.category.title, category_quotes_path(quote.category), :rel => 'tooltip', :title => "Цитат в категории: #{@q_count_cat}", :"data-placement" => 'right'

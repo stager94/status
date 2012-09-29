@@ -3,5 +3,5 @@ class Quote < ActiveRecord::Base
 	# @quotes_category = Category.find(params[:category_id])
   belongs_to :user
   belongs_to :category
-  attr_accessible :author, :content, :user_id, :section_id, :category_id
+  attr_accessible :author, :content, :user_id, :category_id
 end

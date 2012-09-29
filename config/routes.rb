@@ -5,6 +5,14 @@ Status::Application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
 
   root :to => 'application#index'
+
+  resources :category do
+    resources :quotes
+  end
+
+  resources :pages
+
+  match 'quotes' => 'quotes#all'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

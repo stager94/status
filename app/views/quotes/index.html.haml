@@ -1,0 +1,9 @@
+%h2
+	= @quotes_category.title
+
+-if @q_count == 0 #[@quotes_category.id]
+	= render 'quote_error'
+-else
+	-@quotes.each do |quote|
+		= render 'quote', quote: quote
+= paginate @quotes

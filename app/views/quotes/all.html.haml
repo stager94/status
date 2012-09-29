@@ -1,0 +1,8 @@
+%h2
+	= t('breadcrumbs.quotes')
+
+-@quotes.each do |quote|
+	-@quotes_count_category = Category.find(quote.category.id)
+	-@q_count_cat = @quotes_count_category.quotes.count
+	= render 'quotes', quote: quote
+= paginate @quotes
