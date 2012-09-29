@@ -13,3 +13,27 @@ ru:
   modules:
     logout:
       out: 'Выход'
+  authorization:
+    sign_in:
+      button: 'Войти'
+      remember_me: 'Запомнить меня'
+      email: 'Электронная почта'
+      password: 'Пароль'
+    links:
+      sign_up: 'Зарегистрироваться'
+      forgott: 'Забыли пароль?'
+      dont_confirmation: 'Не получили письмо активации?'
+      sign_in: 'Войти в аккаунт'
+    sign_up:
+      username: 'Логин'
+      password: 'Пароль'
+      email: 'Email'
+      avatar: 'Аватарка'
+      password_confirmation: 'Повторите пароль'
+      sign_up: 'Создать аккаунт'
+    resent_password:
+      send: 'Отправить интструкцию по восстановлению пароля'
+    reset_password:
+      send: 'Изменить пароль'
+    reset_confirmation:
+      send: 'Отправить письмо'

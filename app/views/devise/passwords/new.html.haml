@@ -1,0 +1,16 @@
+%h1
+	Забыли пароль?
+= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post, :class => 'form-horizontal'}) do |f| 
+	= devise_error_messages!
+	%legend Восстановление пароля
+
+	%div.control-group
+		= f.label t('authorization.sign_up.email'), class: 'control-label', for: 'inputEmail'
+		%div.controls
+			= f.email_field :email, id: 'inputEmail', placeholder: 'Email'
+
+	%div.control-group
+		%div.controls
+			= f.submit t('authorization.resent_password.send'), class: 'btn'
+
+	= render "devise/shared/links"

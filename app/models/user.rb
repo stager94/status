@@ -7,4 +7,5 @@ class User < ActiveRecord::Base
 	attr_accessible :avatar, :email, :username, :admin, :password, :password_confirmation, :remember_me, :role
   validates :username, :uniqueness => true
   has_many :quotes
+  validates :username, :uniqueness => true
 end

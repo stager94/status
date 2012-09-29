@@ -2,21 +2,26 @@
 %h2
 	Войти в аккаунт
 
-= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
-	%div
-		= f.label :email 
-		= f.email_field :email 
+= form_for(resource, :as => resource_name, :html => {:class => 'form-horizontal'} , :url => session_path(resource_name)) do |f|
+	%legend Панель авторизации
+	%div.control-group
+		= f.label t('authorization.sign_in.email'), class: 'control-label', for: 'inputEmail'
+		%div.controls
+			= f.email_field :email, id: 'inputEmail', placeholder: 'Email'
 
-	%div
-		= f.label :password
-		= f.password_field :password
+	%div.control-group
+		= f.label t('authorization.sign_in.password'), class: 'control-label', for: 'inputPassword'
+		%div.controls
+			= f.password_field :password, id: 'inputPassword', placeholder: 'Пароль'
 
 	- if devise_mapping.rememberable?
-		%div
-			= f.check_box :remember_me
-			= f.label :remember_me
+		%div.control-group
+			%div.controls
+				%label{class: 'checkbox'}
+					= f.check_box :remember_me
+					= t('authorization.sign_in.remember_me')
 
-	= f.submit "Sign in"
+				= f.submit t('authorization.sign_in.button'), class: 'btn'
 
 	%div
 		= render "devise/shared/links"

@@ -1,0 +1,27 @@
+%h1 Подтверждение аккаунта
+= form_for(resource, :as => resource_name, :url => confirmation_path(resource_name), :html => { :method => :post, :class => 'form-horizontal' }) do |f|
+	%legend Отправить инструкцию подтверждения аккаунта заново
+
+	%div.control-group
+		= f.label t('authorization.sign_up.email'), class: 'control-label', for: 'inputEmail'
+		%div.controls
+			= f.email_field :email, id: 'inputEmail', placeholder: 'Email'
+
+	%div.control-group
+		%div.controls
+			= f.submit t('authorization.reset_confirmation.send'), class: 'btn'
+
+	= render "devise/shared/links"
+
+/ <h2>Resend confirmation instructions</h2>
+
+/ <%= form_for(resource, :as => resource_name, :url => confirmation_path(resource_name), :html => { :method => :post }) do |f| %>
+/   <%= devise_error_messages! %>
+
+/   <div><%= f.label :email %><br />
+/   <%= f.email_field :email %></div>
+
+/   <div><%= f.submit "Resend confirmation instructions" %></div>
+/ <% end %>
+
+/ <%= render "devise/shared/links" %>
