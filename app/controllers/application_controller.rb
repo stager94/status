@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
   end
 
   def category
-  	@category = Category.ordering
+  	@category = Category.find(:all)
   end
 
   def set_initial_breadcrumbs
