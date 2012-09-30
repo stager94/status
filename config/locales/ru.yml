@@ -31,13 +31,15 @@ ru:
       avatar: 'Аватарка'
       password_confirmation: 'Повторите пароль'
       sign_up: 'Создать аккаунт'
+      country: 'Страна'
     resent_password:
       send: 'Отправить интструкцию по восстановлению пароля'
     reset_password:
       send: 'Изменить пароль'
     reset_confirmation:
       send: 'Отправить письмо'
-
   failure:
     user:
       invalid: 'Неверная комбинация логин/пароль'
+  config:
+    site_name: 'myСтатус - цитаты и высказывания'

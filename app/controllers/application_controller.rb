@@ -3,7 +3,8 @@ class ApplicationController < ActionController::Base
   before_filter :set_locale
   before_filter :category
   before_filter :set_initial_breadcrumbs
-
+  before_filter :site_config
+  # require 'localized_country_select' 
   def index
   	@pages = Page.favourite
   end
@@ -20,6 +21,10 @@ class ApplicationController < ActionController::Base
 
   def set_initial_breadcrumbs
     add_breadcrumb I18n.t("breadcrumbs.home"), :root_path
+  end
+
+  def site_config
+    @site_name = t('config.site_name')
   end
 
 end

@@ -20,6 +20,9 @@ gem 'bootstrap-sass', '~> 2.1.0.0'
 gem 'dynamic_form'
 gem 'friendly_id'
 gem 'rails-breadcrumbs'
+gem 'country-select'
+# gem 'country_code_select'
+# gem "magic-localized_country_select", "~> 0.2.0"
 
 # Gems used only for assets and not required
 # in production environments by default.

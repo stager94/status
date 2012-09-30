@@ -23,4 +23,9 @@ module ApplicationHelper
 			render :partial => "modules/logout"
 		end
 	end
+
+
+  def page_title
+    (@content_for_title + " - " if @content_for_title).to_s + @site_name
+  end
 end
