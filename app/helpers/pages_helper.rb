@@ -21,4 +21,5 @@ module PagesHelper
 
     html.html_safe
   end
+
 end

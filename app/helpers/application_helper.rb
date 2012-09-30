@@ -24,8 +24,16 @@ module ApplicationHelper
 		end
 	end
 
-
   def page_title
     (@content_for_title + " - " if @content_for_title).to_s + @site_name
+  end
+
+  def custom_country_options
+    countries = ActionView::Helpers::FormOptionsHelper::COUNTRIES.map do |c|
+      [c.downcase, c, {:"country-code" => c[0..1]}]
+      #=> ["algeria", "Algeria", "Al"] 
+    end
+
+    return options_for_select(countries)
   end
 end
