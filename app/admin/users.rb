@@ -14,7 +14,7 @@ ActiveAdmin.register User do
     	f.inputs "Details" do
     	  f.input :username
     	  f.input :email
-          f.input :country
+          f.input :country,:priority_countries => ['UA', 'RU']
         f.input :admin
     	  f.input :avatar, :as => :file
     	end
