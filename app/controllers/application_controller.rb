@@ -7,9 +7,13 @@ class ApplicationController < ActionController::Base
   # require 'localized_country_select' 
   def index
   	@pages = Page.favourite
+    vk = VkontakteApi::Client.new(session[:token])
+    
     if !current_user.nil?
       # сначала создадим клиент API
+      
       vk = VkontakteApi::Client.new(session[:token])
+
       # session[:state] = Digest::MD5.hexdigest(rand.to_s)
       # @vk = VkontakteApi.authorize(code: params[:code])
       # session[:state] = Digest::MD5.hexdigest(rand.to_s)
