@@ -21,6 +21,7 @@ gem 'dynamic_form'
 gem 'friendly_id'
 gem 'rails-breadcrumbs'
 gem 'country-select'
+gem 'vkontakte_api', '~> 1.0'
 # gem 'localized_country_select'
 # gem "magic-localized_country_select", "~> 0.2.0"
 

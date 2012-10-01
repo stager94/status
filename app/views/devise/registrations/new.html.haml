@@ -31,6 +31,11 @@
 			= f.country_select :country, ["UA", "RU"]
 
 	%div.control-group
+		= f.label t('authorization.sign_up.vk'), class: 'control-label', for: 'inputVK'
+		%div.controls
+			= f.text_field :vk, id: 'inputVK', placeholder: 'Страница ВКонтакте'
+
+	%div.control-group
 		= f.label t('authorization.sign_up.avatar'), class: 'control-label', for: 'inputAvatar'
 		%div.controls
 			= f.file_field :avatar, id: 'inputAvatar'

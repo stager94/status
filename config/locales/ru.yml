@@ -32,6 +32,7 @@ ru:
       password_confirmation: 'Повторите пароль'
       sign_up: 'Создать аккаунт'
       country: 'Страна'
+      vk: 'Страница ВКонтакте'
     resent_password:
       send: 'Отправить интструкцию по восстановлению пароля'
     reset_password:
