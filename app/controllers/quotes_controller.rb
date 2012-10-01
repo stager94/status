@@ -20,4 +20,8 @@ class QuotesController < ApplicationController
 		@q_count = @quotes.count
 		# @quotes = @quote.page(params[:page]).order('created_at DESC')
 	end
+
+	def show
+		@quote = Quote.find(params[:id])
+	end
 end
