@@ -13,6 +13,9 @@ Status::Application.routes.draw do
   resources :pages
 
   match 'quotes' => 'quotes#all'
+
+  match 'vkauth' => 'sessions#vk_code'
+  match 'vkauth/access' => 'sessions#vk_access'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

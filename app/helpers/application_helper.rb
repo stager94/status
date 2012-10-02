@@ -21,6 +21,7 @@ module ApplicationHelper
 			render :partial => "modules/authorization"
 		else
 			render :partial => "modules/logout"
+			
 		end
 	end
 

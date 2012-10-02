@@ -6,10 +6,17 @@
 			%b
 				= current_user.username
 			%div
-				= @user.first_name + ' ' +@user.last_name 
+				/ = @user.first_name + ' ' +@user.last_name 
 			%div
 			%ul.f16{style: 'list-style-type:none;margin: 0; padding: 0;'}
 				%li.flag.selected{style: 'line-height:16px;margin-left: 55px;padding-left: 19px;', class: "#{current_user.country.downcase}"} 
 					= I18n.t current_user.country, :scope => 'countries' 		
 		%div
 			= link_to t('modules.logout.out'), destroy_user_session_path, :method=> "delete"
+		-if session[:vk_id].nil?
+			= link_to 'http://api.vk.com/oauth/authorize?client_id=3155370&scope=wall,photos&redirect_uri=http://example.com:3000/vkauth&response_type=code', class: 'btn btn-primary' do
+				%i.icon-home.icon-white"
+				Войти через ВКонтакте 
+
+		-if !session[:vk_id].nil?
+			= session[:token]

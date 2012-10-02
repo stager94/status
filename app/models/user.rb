@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
 	has_attached_file :avatar
 	attr_accessible :avatar, :email, :username, :admin, :password, :password_confirmation, :remember_me, :role, :country, :vk
   validates :username, :uniqueness => true
-  has_many :quotes
+  has_many :quotes, dependent: :destroy
   validates :username, :uniqueness => true
   validates :vk, :uniqueness => true
 end

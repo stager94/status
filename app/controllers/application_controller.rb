@@ -7,20 +7,9 @@ class ApplicationController < ActionController::Base
   # require 'localized_country_select' 
   def index
   	@pages = Page.favourite
-    vk = VkontakteApi::Client.new(session[:token])
-    
-    if !current_user.nil?
-      # сначала создадим клиент API
-      
-      vk = VkontakteApi::Client.new(session[:token])
-
-      # session[:state] = Digest::MD5.hexdigest(rand.to_s)
-      # @vk = VkontakteApi.authorize(code: params[:code])
-      # session[:state] = Digest::MD5.hexdigest(rand.to_s)
-      # redirect_to VkontakteApi.authorization_url(scope: [:notify, :friends, :photos], state: session[:state])
-      # app.access_token = 'ad'
-      # vk.wall.savePost(:message => 'test text')
-      @user = vk.users.get(uid: "#{current_user.vk.split("/")[3]}", fields: [:screen_name, :photo]).first
+    if !session[:token].nil?
+      app = VK::Application.new access_token: session[:token]
+      # app.wall.
     end
   end
 
@@ -40,6 +29,9 @@ class ApplicationController < ActionController::Base
 
   def site_config
     @site_name = t('config.site_name')
+
+    # app = VK::Serverside.new app_id: '3153804', app_secret: 'QJBbxVQK17mn38cVwxPX'
+    # app.authorize true
   end
 
 end
