@@ -29,7 +29,7 @@
 					×
 				%h4 Ошибка!
 				Для того, чтобы добавить цитату себе ВКонтакте, необходимо
-				= link_to 'авторизироваться', 'http://api.vk.com/oauth/authorize?client_id=3155370&scope=wall,photos&redirect_uri=http://example.com:3000/vkauth&response_type=code'
+				= link_to 'авторизироваться', "http://api.vk.com/oauth/authorize?client_id=#{VkontakteApi.app_id}&scope=wall,photos&redirect_uri=#{VkontakteApi.redirect_uri}&response_type=code"
 				с помощью ВКонтакте.
 
 %legend{style: 'margin-bottom: 5px;'} Понравилась цитата?
