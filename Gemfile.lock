@@ -180,6 +180,7 @@ GEM
       json (~> 1.4)
     responders (0.9.3)
       railties (~> 3.1)
+    rest-open-uri (1.0.0)
     russian (0.6.0)
       i18n (>= 0.5.0)
     sass (3.2.1)
@@ -249,6 +250,7 @@ DEPENDENCIES
   pry-nav
   rails (= 3.2.8)
   rails-breadcrumbs
+  rest-open-uri (~> 1.0.0)
   russian
   sass-rails (~> 3.2.3)
   sinatra

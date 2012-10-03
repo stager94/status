@@ -7,10 +7,6 @@ class ApplicationController < ActionController::Base
   # require 'localized_country_select' 
   def index
   	@pages = Page.favourite
-    if !session[:token].nil?
-      app = VK::Application.new access_token: session[:token]
-      # app.wall.
-    end
   end
 
   def set_locale
@@ -29,9 +25,6 @@ class ApplicationController < ActionController::Base
 
   def site_config
     @site_name = t('config.site_name')
-
-    # app = VK::Serverside.new app_id: '3153804', app_secret: 'QJBbxVQK17mn38cVwxPX'
-    # app.authorize true
   end
 
 end

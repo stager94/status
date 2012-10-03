@@ -25,6 +25,8 @@ gem 'vkontakte_api', '~> 1.0'
 gem 'vk-ruby'
 gem 'omniauth'
 gem 'sinatra'
+gem "rest-open-uri", "~> 1.0.0"
+
 # gem 'localized_country_select'
 # gem "magic-localized_country_select", "~> 0.2.0"
 

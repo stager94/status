@@ -16,7 +16,4 @@
 		-if session[:vk_id].nil?
 			= link_to 'http://api.vk.com/oauth/authorize?client_id=3155370&scope=wall,photos&redirect_uri=http://example.com:3000/vkauth&response_type=code', class: 'btn btn-primary' do
 				%i.icon-home.icon-white"
-				Войти через ВКонтакте 
-
-		-if !session[:vk_id].nil?
-			= session[:token]
+				Авторизироваться ВКонтакте

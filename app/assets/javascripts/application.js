@@ -17,4 +17,17 @@
 //= require_tree .
 $(document).ready(function(){
 	 $("[rel=tooltip]").tooltip();
+	 $(location).attr('href');
 })
+
+VK.init({
+    apiId: 3153804 // id созданного вами приложения вконтакте 
+});
+
+function sendwallpost(mydata, vk_id) {
+
+    VK.api("wall.post", {
+        owner_id: vk_id,
+        message: mydata
+    }, function (data) {});
+}

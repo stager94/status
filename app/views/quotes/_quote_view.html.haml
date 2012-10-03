@@ -1,12 +1,30 @@
-%blockquote
+%h6
+	поделился
+	= quote.user.username
+	= quote.created_at.in_time_zone('Kyiv').strftime("%m.%d.%Y %H:%M")
+%div.hero-unit
 	%p
 		= quote.content
-	%small
-		= quote.author
-	%h6
-		поделился
-		= quote.user.username
-		= quote.created_at.in_time_zone('Kyiv').strftime("%m.%d.%Y %H:%M")
+	%blockquote
+		%small
+			= quote.author
+	-if current_user.nil?
+		%div.alert.alert-error
+			%button{:type => "button", :class => "close", :"data-dismiss" => "alert"}
+				×
+			%h4 Ошибка!
+			Вы неавторизированы!
+	-else
+		-if !session[:vk_id].nil?
+			%div.btn.btn-small.btn-primary{:onclick=>"sendwallpost('#{quote.content} - #{quote.author}', #{session[:vk_id]});"}
+				Добавить на стену
+		-else
+			%div.alert.alert-error
+				%button{:type => "button", :class => "close", :"data-dismiss" => "alert"}
+					×
+				%h4 Ошибка!
+				Вы неавторизированы ВКонтакте!			
+
 
 
 %legend{style: 'margin-bottom: 5px;'} Понравилась цитата?
