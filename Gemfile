@@ -5,7 +5,7 @@ gem 'rails', '3.2.8'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'mysql2'
+
 gem 'haml'
 gem 'paperclip'
 gem 'activeadmin'
@@ -34,6 +34,7 @@ gem "rest-open-uri", "~> 1.0.0"
 # in production environments by default.
 group :development do
 	gem 'pry-nav'
+	gem 'mysql2'
 end
 
 group :assets do
@@ -44,6 +45,9 @@ group :assets do
   gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
+end
+group :production do
+	gem 'pg'
 end
 gem 'jquery-rails'
 
