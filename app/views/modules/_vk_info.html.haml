@@ -1,0 +1,16 @@
+-if !session[:token].nil? && !session[:vk_id].nil?
+	%legend Аккаунт VKontakte
+	%div.boxgrid2
+		%div.boxgrid.captionfull
+			%img{src: "#{@photo[0]}"}
+		%div{style: "display:table-cell;vertical-align:middle;height:50px;"}
+		
+			%div
+				= @first_name[0]
+				= @nickname[0]
+				= @last_name[0]
+			%div
+				%b
+					ID:
+				= @uid[0]
+		

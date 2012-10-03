@@ -1,0 +1,7 @@
+%div.alert
+	%button{:type => "button", :class => "close", :"data-dismiss" => "alert"}
+		×
+	%h4 Внимание!
+	Для того, чтобы добавить цитату себе ВКонтакте, необходимо
+	= link_to 'авторизироваться', 'http://api.vk.com/oauth/authorize?client_id=3155370&scope=wall,photos&redirect_uri=http://example.com:3000/vkauth&response_type=code'
+	с помощью ВКонтакте.

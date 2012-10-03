@@ -25,6 +25,7 @@ class ApplicationController < ActionController::Base
 
   def site_config
     @site_name = t('config.site_name')
+
   end
 
 end

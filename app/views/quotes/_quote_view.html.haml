@@ -1,11 +1,10 @@
 
-%div.hero-unit{:style=>"width:400px;float:left;padding:30px;"}
+%div.hero-unit{:style=>"padding:30px;"}
 	%p
 		= quote.content
 
-%div{:style=>"margin-left:480px;"}
-
-	%h6
+%div
+	%h6{style: current_user.nil? || session[:token].nil? ? "" : "float:left"}
 		поделился
 		= quote.user.username
 		= quote.created_at.in_time_zone('Kyiv').strftime("%m.%d.%Y %H:%M")
@@ -15,20 +14,23 @@
 			%button{:type => "button", :class => "close", :"data-dismiss" => "alert"}
 				×
 			%h4 Ошибка!
-			Вы неавторизированы!
+			Для того, чтобы добавить цитату себе ВКонтакте, необходимо
+			= link_to 'зарегистрироваться', new_user_registration_path
+			и/или
+			= link_to 'войти в свой аккаунт', new_user_session_path
 	-else
 		-if !session[:vk_id].nil?
-			%div.btn.btn-primary{:onclick=>"sendwallpost('#{quote.content} - #{quote.author}', #{session[:vk_id]});", :style => 'width:190px;'}
+			%div.btn{:onclick=>"sendwallpost('#{quote.content} - #{quote.author}', #{session[:vk_id]});", :style => 'width:190px;float:right;'}
 				Добавить на стену
-				%i.icon-thumbs-up.icon-white
+				%i.icon-thumbs-up
 		-else
 			%div.alert.alert-error
 				%button{:type => "button", :class => "close", :"data-dismiss" => "alert"}
 					×
 				%h4 Ошибка!
-				Вы неавторизированы ВКонтакте!			
-
-
+				Для того, чтобы добавить цитату себе ВКонтакте, необходимо
+				= link_to 'авторизироваться', 'http://api.vk.com/oauth/authorize?client_id=3155370&scope=wall,photos&redirect_uri=http://example.com:3000/vkauth&response_type=code'
+				с помощью ВКонтакте.
 
 %legend{style: 'margin-bottom: 5px;'} Понравилась цитата?
 
