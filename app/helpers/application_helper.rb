@@ -37,4 +37,8 @@ module ApplicationHelper
 
     return options_for_select(countries)
   end
+
+  def copyright
+  	render :partial => "modules/copyright"
+  end
 end
