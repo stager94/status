@@ -17,9 +17,7 @@ class QuotesController < ApplicationController
 
 	def all
 		@quotes = Quote.page(params[:page]).order('created_at DESC')
-		if @quotes.author.nil?
-			@quotes.author = 'Без автора'
-		end
+
 		@q_count = @quotes.count
 		# @quotes = @quote.page(params[:page]).order('created_at DESC')
 	end
