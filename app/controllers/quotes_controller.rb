@@ -24,5 +24,10 @@ class QuotesController < ApplicationController
 
 	def show
 		@quote = Quote.find(params[:id])
+		if @quote.author == ''
+			@vk_message = @quote.content
+		else
+			@vk_message = @quote.content+' - '+@quote.author
+		end
 	end
 end

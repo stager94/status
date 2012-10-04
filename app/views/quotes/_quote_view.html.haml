@@ -1,7 +1,6 @@
 %div.hero-unit{:style=>"padding:30px;"}
 	%p
 		= quote.content
-
 %div
 	%h6{style: current_user.nil? || session[:token].nil? ? "" : "float:left"}
 		поделился
@@ -19,7 +18,7 @@
 			= link_to 'войти в свой аккаунт', new_user_session_path
 	-else
 		-if !session[:vk_id].nil?
-			%div.btn{:onclick=>"sendwallpost('#{quote.content} - #{quote.author}', #{session[:vk_id]});", :style => 'width:190px;float:right;'}
+			%div.btn{:onclick=>"sendwallpost('#{@vk_message}', #{session[:vk_id]});", :style => 'width:190px;float:right;'}
 				Добавить на стену
 				%i.icon-thumbs-up
 		-else
