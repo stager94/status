@@ -1,4 +1,7 @@
 %h1
-	= @quote.author
+	-if @quote.author == ''
+		Без автора
+	-else
+		= @quote.author
 
 = render 'quote_view', quote: @quote
