@@ -7,6 +7,9 @@
 				= current_user.username
 			%b Последний визит:
 			= current_user.last_sign_in_at.in_time_zone('Kyiv').strftime("%m.%d.%Y %H:%M")
+			(
+			= distance_of_time_in_words_to_now(current_user.last_sign_in_at, true)
+			назад) 
 			%b Визитов:
 			= current_user.sign_in_count
 
