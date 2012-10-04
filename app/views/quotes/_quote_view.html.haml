@@ -41,3 +41,8 @@
 		= link_to 'Поделиться в Одноклассниках','http://www.odnoklassniki.ru/dk?st.cmd=addShare&st._surl='+section_quote_path(quote.section, quote.id, :only_path => false), :target => '_blank'
 	%li
 		= link_to 'Поделиться в Facebook','http://www.facebook.com/login.php?next='+section_quote_path(quote.section, quote.id, :only_path => false), :target => '_blank'
+
+
+/ %div.btn{:onclick=>"sendwallpost('#{quote.content} - #{quote.author}', 185209743);", :style => 'width:190px;float:right;'}
+/ 	Добавить на стену
+/ 	%i.icon-thumbs-up

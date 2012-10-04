@@ -25,7 +25,9 @@ class ApplicationController < ActionController::Base
 
   def site_config
     @site_name = t('config.site_name')
-
+    reg = /@token="\w+"/
+    @url = request.env
+    @uri = @url.to_s
   end
 
 end
