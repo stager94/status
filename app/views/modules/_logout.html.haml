@@ -5,6 +5,11 @@
 			Здравствуйте, 
 			%b
 				= current_user.username
+			%b Последний визит:
+			= current_user.last_sign_in_at
+			%b Количество посещений:
+			= current_user.sign_in_count
+
 
 			
 			%ul.f16{style: 'list-style-type:none;margin: 0; padding: 0;'}
