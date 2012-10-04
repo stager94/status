@@ -29,5 +29,5 @@ function sendwallpost(mydata, vk_id) {
     VK.api("wall.post", {
         owner_id: vk_id,
         message: mydata
-    }, function (data) {alert('Спасибо!');});
+    }, function (data) {});
 }
