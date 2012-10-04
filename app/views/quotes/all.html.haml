@@ -6,5 +6,5 @@
 -@quotes.each do |quote|
 	-@quotes_count_category = Section.find(quote.section.id)
 	-@q_count_cat = @quotes_count_category.quotes.count
-	= render 'quote', quote: quote
+	= render 'quotes', quote: quote
 = paginate @quotes
