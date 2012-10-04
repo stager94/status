@@ -6,8 +6,8 @@
 			%b
 				= current_user.username
 			%b Последний визит:
-			= current_user.last_sign_in_at
-			%b Количество посещений:
+			= current_user.last_sign_in_at.in_time_zone('Kyiv').strftime("%m.%d.%Y %H:%M")
+			%b Визитов:
 			= current_user.sign_in_count
 
 
