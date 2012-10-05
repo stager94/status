@@ -3,11 +3,13 @@ ActiveAdmin.register User do
     id_column
     column :username
     column :email
-    column :admin
+    column :first_name
+    column :last_name
     column :country
     column :vk
-    column :created_at
-    column :updated_at
+    column :online
+    column :admin
+    column :last_requested_at
     default_actions
   end
 

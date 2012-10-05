@@ -21,7 +21,8 @@ $(document).ready(function(){
 })
 
 VK.init({
-    apiId: 3157214 // id созданного вами приложения вконтакте 
+    //apiId: 3157214 // id созданного вами приложения вконтакте 
+    apiId: 3153804 // id созданного вами приложения вконтакте 
 });
 
 function sendwallpost(mydata, vk_id) {
@@ -30,4 +31,5 @@ function sendwallpost(mydata, vk_id) {
         owner_id: vk_id,
         message: mydata
     }, function (data) {});
+    
 }

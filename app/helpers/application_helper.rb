@@ -41,4 +41,9 @@ module ApplicationHelper
   def copyright
   	render :partial => "modules/copyright"
   end
+
+  def online_list
+  	@online = User.online
+  	render :partial => 'modules/online'
+  end
 end

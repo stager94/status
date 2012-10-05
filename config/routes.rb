@@ -1,5 +1,5 @@
 Status::Application.routes.draw do
-  devise_for :users
+  devise_for :users, :controllers => { :sessions => "my_devise" }
   ActiveAdmin.routes(self)
   mount Ckeditor::Engine => '/ckeditor'
   devise_for :admin_users, ActiveAdmin::Devise.config
