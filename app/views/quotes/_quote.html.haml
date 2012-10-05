@@ -2,10 +2,7 @@
 	%p
 		= quote.content
 	%small
-		-if quote.author == ''
-			Без автора
-		-else
-			= quote.author
+		= quote.author
 	%h6
 		поделился
 		= quote.user.username
