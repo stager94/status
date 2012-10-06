@@ -3,5 +3,5 @@
 		×
 	%h4 Внимание!
 	Для того, чтобы добавить цитату себе ВКонтакте, необходимо
-	= link_to 'авторизироваться', "http://api.vk.com/oauth/authorize?client_id=#{VkontakteApi.app_id}&scope=wall,photos&redirect_uri=#{VkontakteApi.redirect_uri}&response_type=code"
+	= link_to 'авторизироваться', "http://api.vk.com/oauth/authorize?client_id=#{VkontakteApi.app_id}&scope=#{@vk_scope}&redirect_uri=#{VkontakteApi.redirect_uri}&response_type=code"
 	с помощью ВКонтакте.

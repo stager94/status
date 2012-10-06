@@ -21,15 +21,26 @@ $(document).ready(function(){
 })
 
 VK.init({
-    apiId: 3157214 // id созданного вами приложения вконтакте сайт
-    //apiId: 3153804 // id созданного вами приложения вконтакте локал
+    //apiId: 3157214 // id созданного вами приложения вконтакте сайт
+    apiId: 3153804 // id созданного вами приложения вконтакте локал
 });
 
 function sendwallpost(mydata, vk_id) {
-
     VK.api("wall.post", {
         owner_id: vk_id,
         message: mydata
     }, function (data) {});
-    
+}
+
+function sendnotesadd(title, text) {
+    VK.api("notes.add", {
+        title: 'title',
+        text: 'text'
+    }, function (data) {});
+}
+
+function sendstatusset(title, text) {
+    VK.api("status.set", {
+        text: 'text'
+    }, function (data) {alert(2048)});
 }

@@ -18,14 +18,30 @@
 			= link_to 'войти в свой аккаунт', new_user_session_path
 	-else
 		-if !session[:vk_id].nil?
+
+
 			%div.btn{:onclick=>"sendwallpost('#{@vk_message}', #{session[:vk_id]});", :style => 'width:190px;float:right;'}
 				Добавить на стену
 				%i.icon-thumbs-up
+
+			%br
+
+			%div.btn{:onclick=>"sendnotesadd('Title', 'Text');", :style => 'width:190px;float:right;'}
+				В закладки
+				%i.icon-thumbs-up
+
+			%br
+
+			%div.btn{:onclick=>"sendstatusset('Title', 'Text');", :style => 'width:190px;float:right;'}
+				Обновить статус
+				%i.icon-thumbs-up
+
+
 		-else
 			%div.alert.alert-error
 				%button{:type => "button", :class => "close", :"data-dismiss" => "alert"}
 					×
 				%h4 Ошибка!
 				Для того, чтобы добавить цитату себе ВКонтакте, необходимо
-				= link_to 'авторизироваться', "http://api.vk.com/oauth/authorize?client_id=#{VkontakteApi.app_id}&scope=wall,photos&redirect_uri=#{VkontakteApi.redirect_uri}&response_type=code"
+				= link_to 'авторизироваться', "http://api.vk.com/oauth/authorize?client_id=#{VkontakteApi.app_id}&scope=#{@vk_scope}&redirect_uri=#{@vk_scope}&response_type=code"
 				с помощью ВКонтакте.

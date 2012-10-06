@@ -9,6 +9,7 @@ class SessionsController < ApplicationController
         session[:vk_id] = @id
     redirect_to root_path
     end
+    @access2 = Nokogiri::HTML(open("https://oauth.vk.com/authorize?client_id=#{VkontakteApi.app_id}&scope=wall,status,notes&redirect_uri=http://example.com:3000&response_type=token"))
   end
 
   def vk_access

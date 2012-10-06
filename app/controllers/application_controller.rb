@@ -27,6 +27,7 @@ class ApplicationController < ActionController::Base
 
   def site_config
     @site_name = t('config.site_name')
+    @vk_scope = 'status,notes,wall,photos'
   end
 
   def requested
