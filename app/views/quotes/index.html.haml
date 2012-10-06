@@ -1,5 +1,9 @@
+- @content_for_title = @quotes_category.title
+
 %h1
 	= @quotes_category.title
+	-if !current_user.nil? && current_user.admin == true
+		= link_to 'Добавить цитату', new_section_quote_path(@quotes_category), class: 'btn btn-link', style: 'margin-bottom:15px;'
 
 -if @q_count == 0 #[@quotes_category.id]
 	= render 'quote_error'

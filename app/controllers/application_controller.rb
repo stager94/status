@@ -32,6 +32,7 @@ class ApplicationController < ActionController::Base
   def requested
     if !current_user.nil?
       current_user.last_requested_at = Time.now.utc
+      current_user.online = true
       current_user.save
     end
   end

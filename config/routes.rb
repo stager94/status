@@ -17,6 +17,10 @@ Status::Application.routes.draw do
     member do
       get :delete_avatar
     end
+
+    collection do
+      get :online
+    end
   end
 
   match 'quotes' => 'quotes#all'

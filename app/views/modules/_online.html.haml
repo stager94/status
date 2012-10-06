@@ -1,6 +1,6 @@
 %div.sidebar_module
 	%legend 
-		Сейчас онлайн
+		= link_to "Сейчас онлайн", online_users_path
 		%span.badge
 			= @online_count
 	-@online.each do |user|

@@ -2,9 +2,12 @@
 	%p
 		= quote.content
 	%small
-		= quote.author
+		-if quote.author == ''
+			Без автора
+		-else
+			= quote.author
 	%h6
-		поделился
-		= quote.user.username
+		= image_tag quote.user.avatar.url(:thumb), class: 'img-circle', style: 'width:20px;'
+		= link_to "#{quote.user.username}", user_path(quote.user)
 		= quote.created_at.in_time_zone('Kyiv').strftime("%m.%d.%Y %H:%M")
 	= link_to "Подробнее", section_quote_path(quote.section, quote.id)

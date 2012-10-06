@@ -1,5 +1,9 @@
+- @content_for_title = "Редактирование аккаунта #{@profile.username}"
+
 %h1
 	Редактирование аккаунта
+	%small
+		= @profile.username
 
 = form_for @profile, :url => user_path, :html => {:class => 'form-horizontal'}, :method => :put, :action => :update do |f|
 	-if @profile.errors.any?
@@ -24,9 +28,6 @@
 		= f.label t('authorization.sign_up.avatar'), class: 'control-label', for: 'inputAvatar'
 		%div.controls
 			= f.file_field :avatar, id: 'inputAvatar'
-
-
-
 
 	%div.form-actions
 		= f.submit t('profile.edit'), class: 'btn btn-primary'

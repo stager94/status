@@ -40,3 +40,16 @@ h1, legend{
 .sidebar_module{
 	margin:10px 0;
 }
+
+.users_tr{
+	vertical-align:top;
+	text-align: left;
+	
+	td{
+		padding:10px 0 10px 0;
+	}
+	.av_td{
+		width:100px;
+		padding-right:10px;
+	}
+}

@@ -3,8 +3,8 @@
 		= quote.content
 %div
 	%h6{style: current_user.nil? || session[:token].nil? ? "" : "float:left"}
-		поделился
-		= quote.user.username
+		= image_tag quote.user.avatar.url(:thumb), class: 'img-circle', style: 'width:20px;'
+		= link_to "#{quote.user.username}", user_path(quote.user)
 		= quote.created_at.in_time_zone('Kyiv').strftime("%m.%d.%Y %H:%M")
 
 	-if current_user.nil?
@@ -29,18 +29,3 @@
 				Для того, чтобы добавить цитату себе ВКонтакте, необходимо
 				= link_to 'авторизироваться', "http://api.vk.com/oauth/authorize?client_id=#{VkontakteApi.app_id}&scope=wall,photos&redirect_uri=#{VkontakteApi.redirect_uri}&response_type=code"
 				с помощью ВКонтакте.
-
-%legend{style: 'margin-bottom: 5px;'} Понравилась цитата?
-
-%ul.unstyled
-	%li
-		= link_to 'Поделиться ВКонтакте','http://vk.com/share.php?url='+section_quote_path(quote.section, quote.id, :only_path => false), :target => '_blank'
-	%li
-		= link_to 'Поделиться в Одноклассниках','http://www.odnoklassniki.ru/dk?st.cmd=addShare&st._surl='+section_quote_path(quote.section, quote.id, :only_path => false), :target => '_blank'
-	%li
-		= link_to 'Поделиться в Facebook','http://www.facebook.com/login.php?next='+section_quote_path(quote.section, quote.id, :only_path => false), :target => '_blank'
-
-
-/ %div.btn{:onclick=>"sendwallpost('#{quote.content} - #{quote.author}', 185209743);", :style => 'width:190px;float:right;'}
-/ 	Добавить на стену
-/ 	%i.icon-thumbs-up

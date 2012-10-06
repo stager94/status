@@ -9,8 +9,7 @@
 		%div.controls
 			= f.email_field :email, id: 'inputEmail', placeholder: 'Email'
 
-	%div.control-group
-		%div.controls
-			= f.submit t('authorization.resent_password.send'), class: 'btn'
+	%div.form-actions
+		= f.submit t('authorization.resent_password.send'), class: 'btn btn-primary'
 
 	= render "devise/shared/links"

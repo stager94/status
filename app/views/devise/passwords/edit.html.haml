@@ -17,9 +17,8 @@
 		%div.controls
 			= f.password_field :password_confirmation, id: 'inputPasswordConfirmation', placeholder: 'Повторение пароля'
 
-	%div.control-group
-		%div.controls
-			= f.submit t('authorization.reset_password.send'), class: 'btn'
+	%div.form-actions
+		= f.submit t('authorization.reset_password.send'), class: 'btn btn-primary'
 
 	= render "devise/shared/links"
 

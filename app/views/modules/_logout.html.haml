@@ -13,7 +13,8 @@
 
 			%ul.f16{style: 'list-style-type:none;margin: 0; padding: 0;'}
 				%li.flag.selected{style: 'line-height:16px;padding-left: 19px;', class: "#{current_user.country.downcase}"} 
-					= I18n.t current_user.country, :scope => 'countries' 		
+					= I18n.t current_user.country, :scope => 'countries' 		\
+
 		%div{:style => 'margin-top:14px;'}
 			= vk_info
 		%div

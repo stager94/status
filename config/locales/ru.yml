@@ -5,6 +5,9 @@ ru:
     quotes: 'Цитаты'
     profile: 'Профиль пользователя'
     profile_edit: 'Редактирование аккаунта'
+    users: 'Список пользователей'
+    users_online: 'Пользователи онлайн'
+    new_quote: 'Новая цитата'
   views:
     pagination:
       previous: "&lt; Назад"

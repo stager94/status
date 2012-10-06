@@ -41,11 +41,6 @@
 					= @profile.email
 
 				%dt
-					Дата регистрации:
-				%dd
-					= @profile.created_at.in_time_zone('Kyiv').strftime("%d.%m.%Y %H:%M")
-
-				%dt
 					Страна
 				%dd
 					%ul.f16{style: 'list-style-type:none;margin: 0; padding: 0;'}

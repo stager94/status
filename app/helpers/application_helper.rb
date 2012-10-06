@@ -68,4 +68,9 @@ module ApplicationHelper
   		return "#{t('profile.male')}"
   	end
   end
+
+  def resection(section)
+    @section = Section.find(section)
+    return @section.title
+  end
 end

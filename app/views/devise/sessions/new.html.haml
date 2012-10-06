@@ -1,3 +1,5 @@
+- @content_for_title = "Вход в аккаунт"
+
 - add_breadcrumb I18n.t("breadcrumbs.sign_in"), user_session_path
 %h1
 	Войти в аккаунт
@@ -24,8 +26,9 @@
 				%label{class: 'checkbox'}
 					= f.check_box :remember_me
 					= t('authorization.sign_in.remember_me')
-
-				= f.submit t('authorization.sign_in.button'), class: 'btn'
+	
+	%div.form-actions
+		= f.submit t('authorization.sign_in.button'), class: 'btn btn-primary'
 
 	%div
 		= render "devise/shared/links"
