@@ -43,7 +43,7 @@ module ApplicationHelper
   end
 
   def online_list
-  	@online = User.online.where("updated_at >")
+  	@online = User.online
   	@online_count = User.online.count
 
   	render :partial => 'modules/online'
