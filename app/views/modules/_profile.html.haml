@@ -1,6 +1,6 @@
 %h1
 	= @profile.username
-	-if @profile.online == true && @profile.last_requested_at > 15.minutes.ago
+	-if @profile.online == true && @profile.last_requested_at > 5.minutes.ago
 		%small
 			online
 	-else
