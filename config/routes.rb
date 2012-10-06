@@ -6,11 +6,18 @@ Status::Application.routes.draw do
 
   root :to => 'application#index'
 
+
   resources :section do
     resources :quotes
   end
 
   resources :pages
+
+  resources :users do
+    member do
+      get :delete_avatar
+    end
+  end
 
   match 'quotes' => 'quotes#all'
 

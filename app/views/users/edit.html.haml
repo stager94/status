@@ -1,0 +1,33 @@
+%h1
+	Редактирование аккаунта
+
+= form_for @profile, :url => user_path, :html => {:class => 'form-horizontal'}, :method => :put, :action => :update do |f|
+	-if @profile.errors.any?
+
+		.alert.alert-error
+			%h3
+				= pluralize(@profile.errors.count, "Ошибка", "Ошибки")
+			- @new.errors.full_messages.each do |msg|
+				%li
+					= msg
+
+	%div.control-group
+		= f.label t('authorization.sign_up.sex'), class: 'control-label', for: 'inputSex'
+		%div.controls	
+			= f.select :sex, { "женский" => 0, "мужской"=> 1 }, id: 'inputSex'
+
+	%div.control-group
+		= f.label t('authorization.sign_up.country'), class: 'control-label', for: 'inputCountry'
+		%div.controls
+			= f.country_select :country, ["UA", "RU"], id: 'inputCountry'
+	%div.control-group
+		= f.label t('authorization.sign_up.avatar'), class: 'control-label', for: 'inputAvatar'
+		%div.controls
+			= f.file_field :avatar, id: 'inputAvatar'
+
+
+
+
+	%div.form-actions
+		= f.submit t('profile.edit'), class: 'btn btn-primary'
+		= link_to 'Отмена', user_path(@profile), class: 'btn'

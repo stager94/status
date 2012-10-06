@@ -9,5 +9,6 @@ class MyDeviseController < Devise::SessionsController
 		current_user.online = false
 		current_user.save
 		super
+		reset_session
 	end
 end

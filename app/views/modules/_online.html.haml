@@ -1,3 +1,13 @@
-%legend Сейчас онлайн
--@online.each do |user|
-	=user.username
+%div.sidebar_module
+	%legend 
+		Сейчас онлайн
+		%span.badge
+			= @online_count
+	-@online.each do |user|
+		%div{class: 'user_online', :rel => !user.first_name.nil? && !user.last_name.nil? ? 'tooltip' : '', :title => "#{user.first_name} #{user.last_name}"}
+
+			%div.boxgrid.captionfull
+				=link_to image_tag(user.avatar.url(:thumb)), user_path(user)
+
+			%div.name_field
+				=link_to "#{user.username}", user_path(user)

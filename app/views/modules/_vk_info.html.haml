@@ -2,15 +2,17 @@
 	%legend Аккаунт VKontakte
 	%div.boxgrid2
 		%div.boxgrid.captionfull
-			%img{src: "#{@photo[0]}"}
+			%img{src: "#{@photo[0]}", class: 'img-rounded'}
 		%div{style: "display:table-cell;vertical-align:middle;height:50px;"}
 		
 			%div
-				= @first_name[0]
-				= @nickname[0]
-				= @last_name[0]
+				%strong
+					= @first_name[0]
+					= @last_name[0]
+				%div{:style => "font:normal 11px Arial;"}
+					= @nickname[0]
 			%div
-				%b
+				%strong
 					ID:
 				= @uid[0]
 		

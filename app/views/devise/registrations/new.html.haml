@@ -11,6 +11,11 @@
 			= f.text_field :username, id: 'inputUsername', placeholder: 'Логин'
 
 	%div.control-group
+		= f.label t('authorization.sign_up.sex'), class: 'control-label', for: 'inputSex'
+		%div.controls	
+			= f.select :sex, { "женский" => 0, "мужской"=> 1 }
+
+	%div.control-group
 		= f.label t('authorization.sign_up.email'), class: 'control-label', for: 'inputEmail'
 		%div.controls
 			= f.email_field :email, id: 'inputEmail', placeholder: 'Email'
@@ -31,11 +36,6 @@
 			= f.country_select :country, ["UA", "RU"]
 
 	%div.control-group
-		= f.label t('authorization.sign_up.vk'), class: 'control-label', for: 'inputVK'
-		%div.controls
-			= f.text_field :vk, id: 'inputVK', placeholder: 'Страница ВКонтакте'
-
-	%div.control-group
 		= f.label t('authorization.sign_up.avatar'), class: 'control-label', for: 'inputAvatar'
 		%div.controls
 			= f.file_field :avatar, id: 'inputAvatar'
@@ -43,6 +43,6 @@
 	%div.control-group
 		%div.controls
 			= f.submit t('authorization.sign_up.sign_up'), class: 'btn'
-
+	
 	%div
 		= render "devise/shared/links"

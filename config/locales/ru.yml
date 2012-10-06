@@ -3,6 +3,8 @@ ru:
     home: 'Главная'
     sign_in: 'Войти в аккаунт'
     quotes: 'Цитаты'
+    profile: 'Профиль пользователя'
+    profile_edit: 'Редактирование аккаунта'
   views:
     pagination:
       previous: "&lt; Назад"
@@ -28,11 +30,12 @@ ru:
       username: 'Логин'
       password: 'Пароль'
       email: 'Email'
-      avatar: 'Аватарка'
+      avatar: 'Фотография'
       password_confirmation: 'Повторите пароль'
       sign_up: 'Создать аккаунт'
       country: 'Страна'
       vk: 'Страница ВКонтакте'
+      sex: 'Укажите пол'
     resent_password:
       send: 'Отправить интструкцию по восстановлению пароля'
     reset_password:
@@ -124,3 +127,11 @@ ru:
       links:
         sign_in: "Войти"
         forgot_your_password: "Забыли пароль?"
+  profile:
+    come: 'заходил'
+    come_female: 'заходила'
+    ago: 'назад'
+    male: 'мужской'
+    female: 'женский'
+    edit: 'Сохранить'
+    d_avatar: 'Удалить фотографию'

@@ -1,0 +1,63 @@
+%h1
+	= @profile.username
+	-if @profile.online == true && @profile.last_requested_at > 15.minutes.ago
+		%small
+			online
+	-else
+		%small
+			= last_requested_at(@profile.last_requested_at, @profile.sex)
+
+%table
+	%tr{style: 'vertical-align:top;'}
+		%td
+			= image_tag @profile.avatar.url(:original), class: 'img-polaroid'
+
+			-if !current_user.nil? && current_user.admin == true || current_user == @profile
+				%ul.nav.nav-pills{style: 'margin:10px 0 0 0;'}
+					%li{style: 'width:100%; text-align:center; float:none;'}
+						= link_to "Редактировать аккаунт", edit_user_path(@profile)
+					%li{style: 'width:100%; text-align:center; float:none;'}
+						= link_to "Удалить фотографию",  delete_avatar_user_path(@profile), confirm: 'Без фотографии будет не интересно. Вы уверены?'
+
+		%td{style: 'padding:0 0 0 15px;'}
+
+				
+			%dl
+				- if !@profile.first_name.nil? || !@profile.last_name.nil?
+					%dt
+						Фамилия Имя:
+					%dd
+						= @profile.first_name
+						= @profile.last_name
+
+				%dt
+					Пол:
+				%dd
+					= re_sex(@profile.sex)
+
+				%dt
+					Почта:
+				%dd
+					= @profile.email
+
+				%dt
+					Дата регистрации:
+				%dd
+					= @profile.created_at.in_time_zone('Kyiv').strftime("%d.%m.%Y %H:%M")
+
+				%dt
+					Страна
+				%dd
+					%ul.f16{style: 'list-style-type:none;margin: 0; padding: 0;'}
+						%li.flag.selected{style: 'line-height:16px;padding-left: 19px;', class: "#{@profile.country.downcase}"}
+							= I18n.t @profile.country, :scope => 'countries' 		
+
+				%dt
+					Дата регистрации:
+				%dd
+					= @profile.created_at.in_time_zone('Kyiv').strftime("%d.%m.%Y %H:%M")
+
+				%dt
+					Последний визит:
+				%dd
+					= @profile.last_sign_in_at.in_time_zone('Kyiv').strftime("%d.%m.%Y %H:%M")

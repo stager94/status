@@ -44,6 +44,28 @@ module ApplicationHelper
 
   def online_list
   	@online = User.online
+  	@online_count = User.online.count
+
   	render :partial => 'modules/online'
+  end
+
+  def last_requested_at(time, sex)
+  	if time > 1.days.ago 
+  		if sex == 1
+  			return "#{t('profile.come')} #{distance_of_time_in_words_to_now(time, true)} #{t('profile.ago')}"
+  		else
+  			return "#{t('profile.come_female')} #{distance_of_time_in_words_to_now(time, true)} #{t('profile.ago')}"
+  		end
+  	else
+  		return 234
+  	end
+  end
+
+  def re_sex(sex)
+  	if sex == 0
+  		return "#{t('profile.female')}"
+  	else
+  		return "#{t('profile.male')}"
+  	end
   end
 end

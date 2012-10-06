@@ -1,2 +1,2 @@
 %div.boxgrid.captionfull
-	%img{src: "#{current_user.avatar}", alt: "#{current_user.username}", title: "#{current_user.username}", class: "boxgrid_img"}
+	= image_tag current_user.avatar.url(:thumb), class: 'img-rounded'

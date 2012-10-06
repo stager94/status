@@ -66,4 +66,6 @@ class ApplicationController < ActionController::Base
     session[:checking] = true
     end
   end
+
+
 end
