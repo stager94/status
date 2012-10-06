@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  scope :online, where("last_requested_at > ?", 15.minutes.ago).where("online = true").order("RAND()").limit(6)
+  scope :online, where("last_requested_at > ?", 15.minutes.ago).where("online = true")
   scope :list, order("created_at DESC")
 
   devise :database_authenticatable, :registerable,
