@@ -34,7 +34,12 @@ h1, legend{
 
 .user_online{
 	display:inline-block;
-	margin:10px 9px 0 8px;
+	margin-top: 10px;
+	width:72px;
+	text-align:center;
+	div.boxgrid{
+		nargin-left:11px;
+	}
 }
 
 .sidebar_module{
