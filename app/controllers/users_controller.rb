@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-	before_filter :get_profile, :only => [:show, :destroy, :edit, :update]
+	before_filter :get_profile, :only => [:show, :destroy, :edit, :update, :delete_avatar]
 
 	def show
 		add_breadcrumb t('breadcrumbs.profile'), user_path(@profile)	
