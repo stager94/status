@@ -14,7 +14,7 @@
 							= user.first_name
 							= user.last_name
 
-				-if user.online == true && user.last_requested_at > 15.minutes.ago
+				-if user.online == true && user.last_requested_at > 5.minutes.ago
 					%p.muted
 						online
 

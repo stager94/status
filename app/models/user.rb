@@ -13,6 +13,7 @@ class User < ActiveRecord::Base
 
   validates :username, :length => {:minimum => 3, :maximum => 10}
   validates :username, :format => { :with => /\A[a-zA-Z1-9_-]+\z/}
+  
   def timeout_in
       15.minutes
   end
