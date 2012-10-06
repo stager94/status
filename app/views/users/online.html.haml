@@ -1,0 +1,22 @@
+- @content_for_title = "Сейчас онлайн"
+%h1
+	Пользователи онлайн
+
+%table{style: 'width:100%;', class: 'table'}
+	-@users.each do |user|
+		%tr{class: 'users_tr'}
+			%td{class: 'av_td'}
+				= image_tag user.avatar.url(:small)
+			%td
+				= link_to "#{user.username}", user_path(user), rel: 'tooltip', title: "#{user.created_at.in_time_zone('Kyiv').strftime("%d.%m.%Y %H:%M")}", :"data-placement" => 'right'
+				-if !user.first_name.nil? || !user.last_name.nil?
+					%div
+						%small
+							= user.first_name
+							= user.last_name
+
+				-if user.online == true && user.last_requested_at > 15.minutes.ago
+					%p.muted
+						online
+
+= paginate @users

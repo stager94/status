@@ -1,0 +1,36 @@
+- @content_for_title = "Новая цитата"
+
+%h1
+	Новая цитата
+
+= form_for @quote, :url => section_quotes_path, :html => {:class => 'form-horizontal'}, method: 'post', action: 'create' do |f|
+	-if @quote.errors.any?
+		.alert.alert-error
+			%h3
+				= pluralize(@quote.errors.count, "ошибка", "ошибки")
+			- @quote.errors.full_messages.each do |msg|
+				%li
+					= msg
+
+	%div.control-group
+		= f.label 'Текст', class: 'control-label', for: 'inputContent'
+		%div.controls
+			= f.text_field :content, id: 'inputContent', placeholder: 'Текст цитаты'
+
+	%div.control-group
+		= f.label 'Автор', class: 'control-label', for: 'inputAuthor'
+		%div.controls
+			= f.text_field :author, id: 'inputAuthor', placeholder: 'Автор'
+
+	%div.control-group
+		= f.label 'Пользователь', class: 'control-label', for: 'inputUser'
+		%div.controls
+			= f.text_field :user, id: 'inputUser', value: "#{current_user.username}", :disabled => true
+
+	%div.control-group
+		= f.label 'Категория', class: 'control-label', for: 'inputSection'
+		%div.controls
+			= f.text_field :section, id: 'inputSection', value: "#{resection(params[:section_id])}", :disabled => true
+
+	%div.form-actions
+		= f.submit 'Добавить', class: 'btn btn-primary'
