@@ -7,9 +7,9 @@ class SessionsController < ApplicationController
         @id = link.content.split(":")[3].split('}')[0]
         session[:token] = @token
         session[:vk_id] = @id
-    # redirect_to root_path
+    redirect_to root_path
     end
-    @access2 = Nokogiri::HTML(open("https://api.vk.com/method/status.set?text=cool&access_token=#{session[:token]}"))
+    # @access2 = Nokogiri::HTML(open("https://api.vk.com/method/status.set?text=cool&access_token=#{session[:token]}"))
     
   end
 

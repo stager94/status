@@ -53,8 +53,16 @@ class QuotesController < ApplicationController
 
 		if @quote.author == ''
 			@vk_message = @quote.content
+			@note_title = t('vk.notes.missing')
 		else
 			@vk_message = @quote.content+' - '+@quote.author
+			@note_title = @quote.author
 		end
+	end
+
+	def setstatus
+		@text = Quote.find(params[:id])
+		@result = Nokogiri::HTML(open("https://api.vk.com/method/status.set?text=#{URI.escape(@text.content)}&access_token=#{session[:token]}"))
+		redirect_to section_quote_path(params[:section_id], params[:id])
 	end
 end

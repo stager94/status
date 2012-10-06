@@ -8,7 +8,11 @@ Status::Application.routes.draw do
 
 
   resources :section do
-    resources :quotes
+    resources :quotes do
+      member do
+        get :setstatus
+      end
+    end
   end
 
   resources :pages

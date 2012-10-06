@@ -21,8 +21,8 @@ $(document).ready(function(){
 })
 
 VK.init({
-    //apiId: 3157214 // id созданного вами приложения вконтакте сайт
-    apiId: 3153804 // id созданного вами приложения вконтакте локал
+    apiId: 3157214 // id созданного вами приложения вконтакте сайт
+    // apiId: 3153804 // id созданного вами приложения вконтакте локал
 });
 
 function sendwallpost(mydata, vk_id) {
@@ -34,8 +34,8 @@ function sendwallpost(mydata, vk_id) {
 
 function sendnotesadd(title, text) {
     VK.api("notes.add", {
-        title: 'title',
-        text: 'text'
+        title: title,
+        text: text
     }, function (data) {});
 }
 
