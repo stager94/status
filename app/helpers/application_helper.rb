@@ -51,9 +51,9 @@ module ApplicationHelper
 
   def last_requested_at(time, sex)
 		if sex == 1
-			return "#{t('profile.come')} #{ distance_of_time_in_word_to_now(time, true)} #{t('profile.ago')}"
+			return "#{t('profile.come')} #{distance_of_time_in_word_to_now(time, true)} #{t('profile.ago')}"
 		else
-			return "#{t('profile.come_female')} #{ distance_of_time_in_word_to_now(time, true)} #{t('profile.ago')}"
+			return "#{t('profile.come_female')} #{distance_of_time_in_word_to_now(time, true)} #{t('profile.ago')}"
 		end
   end
 
