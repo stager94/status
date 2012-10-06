@@ -11,6 +11,8 @@ class User < ActiveRecord::Base
   has_many :quotes, dependent: :destroy
   validates :username, :uniqueness => true
 
+  validates :username, :length => {:minimum => 3, :maximum => 10}
+  validates :username, :format => { :with => /\A[a-zA-Z1-9_-]+\z/}
   def timeout_in
       15.minutes
   end
