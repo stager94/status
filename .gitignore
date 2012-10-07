@@ -4,9 +4,4 @@
 /tmp
 tmp
 
-/public/system
-public/system/**/*.png
-public/system/**/*.jpg
-public/system/**/*
-public/system/**/
-/public/system/**/
+public
